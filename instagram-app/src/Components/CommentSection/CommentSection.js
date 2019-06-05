@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const CommentSection = props => {
     console.log("comment: ", props);
@@ -14,6 +15,13 @@ const CommentSection = props => {
             })}
         </>
     );
+}
+
+CommentSection.propTypes = { 
+    dummy: PropTypes.arrayOf(PropTypes.shape({
+        username: PropTypes.string,
+        text: PropTypes.string
+    }))
 }
 //<img src={comment.thumbnailUrl} alt={dummy.username}></img>
 //<p>{comment.username}</p>
