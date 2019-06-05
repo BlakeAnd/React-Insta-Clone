@@ -1,4 +1,6 @@
 import React from 'react';
+import "./PostContainer.css";
+
 import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
@@ -7,9 +9,10 @@ const PostContainer = props => {
         <>
             {props.dummy.map(dummy => {
                 return (
-                    <div key="dummy.id">
+                    <div key="dummy.id" className="post" >
                         <img src={dummy.thumbnailUrl} alt={dummy.username}></img>
-                        <p>{dummy.username}</p>
+                        <img className="pic" src={dummy.imageUrl} alt={dummy.username}></img>
+                        <h1>{dummy.username}</h1>
                         <CommentSection 
                         comments={dummy.comments} />
                     </div>
