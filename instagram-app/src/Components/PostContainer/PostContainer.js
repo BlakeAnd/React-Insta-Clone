@@ -11,8 +11,10 @@ const PostContainer = props => {
                 return (
                     <div key="dummy.id" className="post" >
                         <img src={dummy.thumbnailUrl} alt={dummy.username}></img>
+                        <h2>{dummy.username}</h2>
+                        
                         <img className="pic" src={dummy.imageUrl} alt={dummy.username}></img>
-                        <h1>{dummy.username}</h1>
+
                         <CommentSection 
                         comments={dummy.comments} />
                     </div>
