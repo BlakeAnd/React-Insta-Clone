@@ -3,6 +3,7 @@ import "./PostContainer.css";
 import PropTypes from "prop-types";
 
 import CommentSection from "../CommentSection/CommentSection";
+import Likes from "../Likes/Likes";
 
 class PostContainer extends React.Component{
     //console.log("rendering posts");
@@ -17,7 +18,10 @@ class PostContainer extends React.Component{
                             <h2>{dummy.username}</h2>
     
                             <img className="pic" src={dummy.imageUrl} alt={dummy.username}></img>
-                            <p>{dummy.likes} likes</p>
+                            
+                            <Likes 
+                            likes={dummy.likes}
+                            />
                             <CommentSection 
                             comments={dummy.comments}
                             timestamp = {dummy.timestamp}
@@ -34,6 +38,7 @@ class PostContainer extends React.Component{
     
                             <img className="pic" src={dummy.imageUrl} alt={dummy.username}></img>
                             <p>{dummy.likes} likes</p>
+                            <Likes />
                             <CommentSection 
                             comments={dummy.comments}
                             timestamp = {dummy.timestamp}
