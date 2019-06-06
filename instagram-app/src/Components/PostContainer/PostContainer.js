@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
-    console.log("post: ", props);
+    console.log("rendering posts");
     return (
         <>
             {props.dummy.map(dummy => {
@@ -17,7 +17,9 @@ const PostContainer = props => {
                         <img className="pic" src={dummy.imageUrl} alt={dummy.username}></img>
                         <p>{dummy.likes} likes</p>
                         <CommentSection 
-                        comments={dummy.comments} />
+                        comments={dummy.comments}
+                        timestamp = {dummy.timestamp}
+                        />
                     </div>
                 );
             })}
